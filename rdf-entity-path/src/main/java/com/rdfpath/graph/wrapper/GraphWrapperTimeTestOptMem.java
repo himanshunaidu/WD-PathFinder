@@ -35,7 +35,7 @@ public class GraphWrapperTimeTestOptMem {
 	public void checkTime (String message) throws InterruptedException {
 		if ( (System.currentTimeMillis() - startTime) > seconds * 1000 ) {
 			if (System.getProperty("debug") != null) {
-				System.out.println(message);
+				System.out.println("Message: " + message);
 			}
 			throw new InterruptedException("Done Time");
 		}
@@ -150,7 +150,7 @@ public class GraphWrapperTimeTestOptMem {
 		}
 		
 		finally {
-			System.out.print(totalEdges+";"+(System.currentTimeMillis() - startTime)+";");
+			System.out.print("Finally: "+totalEdges+";"+(System.currentTimeMillis() - startTime)+";");
 		}
 	}
 	
@@ -220,7 +220,8 @@ public class GraphWrapperTimeTestOptMem {
 		}
 		
 		for (Object edge : edges) {
-			checkTime("For edge in sendEdges");													// Revisa tiempo
+			checkTime("For edge in sendEdges");
+			System.out.println("Edge To Text: " + graph.edgeToText(edge));
 			totalEdges+=1;
 		}
 		

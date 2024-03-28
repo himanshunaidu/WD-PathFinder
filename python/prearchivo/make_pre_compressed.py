@@ -23,7 +23,11 @@ line_file = 0           # Líneas totales del archivo (reales)
 rel = {}				# Diccionario que almacena valores y después escribirá en archivo
 act_part = 0			# Número actual del archivo en que se escribirá
 
-with gzip.open('latest-truthy.nt.gz','r') as f:
+# PATH = 'latest-truthy.nt.gz'
+SUBSET = 100000000
+PATH = f"subsets/subset{SUBSET}.nt.gz"
+
+with gzip.open(PATH,'r') as f:
     # Para cada línea del archivo
 	for line in f:
 		line_file += 1

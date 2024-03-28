@@ -4,8 +4,12 @@
 # --------------------------
 
 import gzip
+import time
+
+start = time.time()
 
 INPUT = "latest-truthy.nt.gz"
+# INPUT = "latest-lexemes.nt.gz"
 SUBSET = 100000000
 OUTPUT = f"subsets/subset{SUBSET}.nt.gz"
 
@@ -17,6 +21,7 @@ max_id = 0
 cache_file = gzip.open(OUTPUT,"wb")
 with gzip.open(INPUT,'r') as f:
 	for line in f:
+		if line_counter%1000000==0: print(f'Processing {line_counter} triple')
 		line_decode = line.decode()
 		line_split = line_decode.split(" ")
 		line_counter += 1
@@ -24,7 +29,7 @@ with gzip.open(INPUT,'r') as f:
 			'<http://www.wikidata.org/prop/direct/P' != line_split[1][:38] or
 			'<http://www.wikidata.org/entity/Q' != line_split[2][:33]):
 			continue
-
+		
 		# Obtiene valores de la tripleta
 		subj = int(line_split[0][33:-1])
 		pred = int(line_split[1][38:-1])
@@ -41,3 +46,6 @@ with gzip.open(INPUT,'r') as f:
 print(f"Total {line_counter} lineas")
 print(f"Total {line_added} lineas agregadas")
 print(f"Max id: {max_id}")
+
+end = time.time()
+print(f"Time Taken {(end-start)} seconds")

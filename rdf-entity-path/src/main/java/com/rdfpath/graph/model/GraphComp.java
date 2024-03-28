@@ -1,6 +1,8 @@
 package com.rdfpath.graph.model;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -18,13 +20,16 @@ public class GraphComp extends AbstractGraph {
 	public int[][][] nodes;
 	public int edgesSize;
 	
+	// Example filename: subsets/subset100000000_compressed.gz
 	public GraphComp (String filename, Boolean isGz, int edgesSize) throws IOException {
 		structName = "graphComp";
 		
 		nodes = new int[edgesSize + 1][][];
 		this.edgesSize = edgesSize + 1;
 		
+//		System.out.println("GraphComp filename: "+filename);
 		BufferedReader fileBuff = readFile(filename, isGz);
+		
 		
 		String line = "";
         String[] tempArr;

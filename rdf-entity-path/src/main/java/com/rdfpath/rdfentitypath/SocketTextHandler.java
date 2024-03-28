@@ -1,5 +1,6 @@
 package com.rdfpath.rdfentitypath;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
 import org.json.simple.parser.ParseException;
@@ -44,10 +45,12 @@ public class SocketTextHandler extends TextWebSocketHandler {
 		//int [] edgesSize = {600493, 5977585, 42682387, 652319619, 715906922};
 		
 
+		// Current Directory: C:\Users\<>\AppData\Local\Temp
 		String actFile = (System.getProperty("graph-data") != null) ?
 					System.getProperty("graph-data") :
-					"subset1000000";
+//					 "subset1000000";
 					//"subset1000000";
+					"subset100000000";
 		String filename = path + actFile;
 		
 		int index = 0;
@@ -80,7 +83,7 @@ public class SocketTextHandler extends TextWebSocketHandler {
 				path + files[index] + endComp,
 				true,
 				maxNodeId[index]);
-		
+		// System.exit(1);
 		timeLimit = (System.getProperty("timeLimit") != null) ? Integer.parseInt(System.getProperty("timeLimit")) : -1;
 		logger.info("[Carga Datos] Grafo Cargado");
 	}

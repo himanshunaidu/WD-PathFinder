@@ -1,0 +1,35 @@
+$ git status
+On branch scratch/extra_changes
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   Notes.txt
+        modified:   frontend/package-lock.json
+        new file:   python/java/demo.py
+        new file:   python/java/getpaths.py
+        modified:   python/prearchivo/make_pre_compressed.py
+        modified:   python/prearchivo/make_subset.py
+        new file:   rdf-entity-path/output.txt
+        new file:   rdf-entity-path/src/main/java/com/rdfpath/graph/main/experiments/GetPaths.java
+        modified:   rdf-entity-path/src/main/java/com/rdfpath/graph/model/GraphComp.java
+        modified:   rdf-entity-path/src/main/java/com/rdfpath/graph/wrapper/GraphWrapperTimeTestOptMem.java
+        modified:   rdf-entity-path/src/main/java/com/rdfpath/rdfentitypath/SocketTextHandler.java
+        new file:   utils/convert_to_gz.py
+        new file:   utils/file.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   python/prearchivo/parts/part_0.csv
+        modified:   python/prearchivo/parts/part_1.csv
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        python/java/subsets/
+        python/prearchivo/__pycache__/
+        python/prearchivo/latest-lexemes.nt.gz
+        python/prearchivo/latest-lexemes.nt/
+        python/prearchivo/latest-truthy.nt.gz
+        python/prearchivo/latest-truthy_compressed.gz
+        python/prearchivo/subsets/
+        rdf-entity-path/bin/
+        utils/latest-truthy.nt.bz2
